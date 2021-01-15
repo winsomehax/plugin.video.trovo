@@ -56,7 +56,7 @@ class Query():
         self.endpoint = 'https://gql.trovo.live'
         self.token = None
         self.headername = None
-        self.user_id = ""
+        self.uid = ""
         self.validated_user = False
 
     
