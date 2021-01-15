@@ -121,14 +121,12 @@ def build_followed_replay_user(item_val):
     global query, menu
     menu.start_folder()
 
-    print ("11111: ", item_val)
     replays = query.get_replays(item_val)
 
     if 0 == len(replays):
         menu.new_info_item("** NO REPLAYS FOUND **")
     else:
         for stream in replays:
-            print ("22222: ", stream.title)
             menu.new_video_item(displayName=item_val, title=stream.title,
                                 playURL=stream.playURL, thumbURL=stream.coverURL, duration=stream.duration)
 
