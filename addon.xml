@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.trovo" name="trovo.live" version="0.1.0" provider-name="winsomehax">
+    <requires>
+        <import addon="xbmc.python" version="2.26.0"/>
+        <import addon="script.module.routing" version="0.2.0"/>
+        <import addon="script.module.requests" version="2.9.1"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Viewing streams from dlive.tv</summary>
+        <description lang="en_GB">Viewing streams from dlive.tv</description>
+        <language>English</language>
+        <platform>all</platform>
+        <license>GPL-3.0</license>
+        <forum>https://github.com/winsomehax/</forum>
+        <website>https://github.com/winsomehax/</website>
+        <email>winsomehax@gmail.com</email>
+        <source>https://github.com/winsomehax/</source>
+        <news>https://github.com/winsomehax/</news>
+        <disclaimer lang="en">It's yours. If you break it, you can keep the pieces!</disclaimer>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
