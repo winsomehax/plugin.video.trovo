@@ -1,6 +1,6 @@
 # plugin.video.trovo
 
-Welcome to my Trovo addon for KODI
+Welcome to my Trovo addon for KODI. This add-on allows you to view streams and replay on the https://trovo.live streaming site.
 
 I hope you get some use out of it. Feel free to feedback any suggestions and/or code improvements.
 
