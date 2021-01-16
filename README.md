@@ -7,7 +7,11 @@ I hope you get some use out of it. Feel free to feedback any suggestions and/or 
 Instructions:
 
 
-* Set your Trovo name. You can get this from the Trovo website. 
+* Set your Trovo name. You can do this on the settings screen for the add-on. Ideally open the settings before you run the add-on, but you can also open the settings screen from the add-on's first menu option.
+
+You can get you user name from the Trovo website. The profile screen is shown below.
+
+![username](assets/username.jpg)
 
 Once you have given the add-on your display name, it will access the Trovo website to get the list of streamers you follow. 
 
