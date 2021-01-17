@@ -13,7 +13,7 @@ def valid_user():
     if not query.validated_user:
         # Warn the user that it's not a valid user
         dialog = Dialog()
-        dialog.ok("Warning", "The TROVO add-on has not found your user on TROVO")
+        dialog.ok("Warning", "The add-on has not found your user name on TROVO.LIVE")
         return False
 
     return True
@@ -27,11 +27,17 @@ def index():
 @plugin.route('/followed_live')
 def followed_live():
 
+    if not valid_user():
+        return
+
     build_followed_live()
 
 
 @plugin.route('/followed_replay')
 def followed_replay():
+
+    if not valid_user():
+        return
 
     build_followed_replay()
 
@@ -39,7 +45,7 @@ def followed_replay():
 @plugin.route('/followed_replay_user/<item_val>')
 def followed_replay_user(item_val):
 
-    if not valid_user:
+    if not valid_user():
         return
 
     build_followed_replay_user(item_val)
@@ -47,6 +53,10 @@ def followed_replay_user(item_val):
 
 @plugin.route('/livestreams_search')
 def livestreams_search():
+
+    if not valid_user():
+        return
+
     """ There is no test for valid_user needed here. getting all the livestreams (to search through) doesn't require a user id
     Even if there is a problem in future, this bit of the add-on should still run """
     build_livestreams_search()
@@ -54,6 +64,10 @@ def livestreams_search():
 
 @plugin.route('/all_livestreams')
 def livestreams_all():
+
+    if not valid_user():
+        return
+
     """ There is no test for valid_user needed here. getting all the livestreams doesn't require a user id
     Even if there is a problem in future, this bit of the add-on should still run """
 
@@ -184,13 +198,15 @@ def get_trovo_userid():
     # What is the Display Name set as in the add-on settings
     userName = xbmcaddon.Addon().getSetting("user")
 
+    query.set_user(userName)
+
     # set the query object if it has a valid blockchain user-id
-    if not query.set_user(userName):
+    if not query.validated_user:
 
         # Warn the user that it's not a valid user and resort to Trovo so the add-on at least runs
         dialog = Dialog()
-        dialog.ok("Unable to find your TROVO user",
-                  "The TROVO add-on cannot find the Display Name specified in settings. Using the default: Trovo")
+        dialog.ok("Unable to find your TROVO.LIVE user",
+                  "User name could not be found. Using the default: Trovo")
 
         query.set_user("Trovo")        
         xbmcaddon.Addon().setSetting(id="user", value="Trovo")  # Write that to the settings

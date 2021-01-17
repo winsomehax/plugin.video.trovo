@@ -63,7 +63,7 @@ class Query():
     def set_user(self, userName):
         self.userName=userName
         self.uid=self.get_user_uid(userName)
-        self.validated_user=True
+        #self.validated_user=True
         return True
 
     def __execute(self, query, variables=None):
@@ -90,10 +90,16 @@ class Query():
 
     def get_user_uid(self, userName):
 
-        query='''query { getLiveInfo ( params: { userName: "'''+self.userName+'''" } ) { streamerInfo { uid } } } '''
+        query='''query { getLiveInfo ( params: { userName: "'''+userName+'''" } ) { streamerInfo { uid } } } '''
         result = self.__execute(query)
 
-        ret=result["data"]["getLiveInfo"]["streamerInfo"]["uid"]
+        if result["data"]["getLiveInfo"] == None:
+            self.validated_user = False
+            self.uid="INVALID USER" # just so if flags up in any debugging.
+            ret = self.uid 
+        else:
+            ret=result["data"]["getLiveInfo"]["streamerInfo"]["uid"]
+            self.validated_user=True
         
         return ret
 
