@@ -9,8 +9,8 @@
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="en_GB">Viewing streams from dlive.tv</summary>
-        <description lang="en_GB">Viewing streams from dlive.tv</description>
+        <summary lang="en_GB">Viewing streams from trovo.live</summary>
+        <description lang="en_GB">Viewing streams from trovo.live</description>
         <language>English</language>
         <platform>all</platform>
         <license>GPL-3.0</license>
