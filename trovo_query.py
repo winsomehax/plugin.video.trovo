@@ -14,7 +14,7 @@ class LiveStream():
         self.displayName=displayName
         self.description = description
         self.coverURL = coverURL
-        self.playURL = playURL
+        self.playURL = playURL+"|Origin=https://trovo.live"
 
 
 """
@@ -26,7 +26,7 @@ class ReplayStream():
 
     def __init__(self, title, playURL, coverURL, duration):
         self.title = title
-        self.playURL = playURL
+        self.playURL = playURL+"|Origin=https://trovo.live"
         self.coverURL = coverURL
         self.duration = duration
 
@@ -72,7 +72,8 @@ class Query():
     def __send(self, query, variables):
         data = {'query': query, 'variables': variables}
         headers = {'Accept': 'application/json',
-                   'Content-Type': 'application/json'}
+                   'Content-Type': 'application/json',
+                   'Origin': 'https://trovo.live'}
 
         if self.token is not None:
             headers[self.headername] = '{}'.format(self.token)
