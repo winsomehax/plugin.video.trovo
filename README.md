@@ -1,4 +1,4 @@
-# plugin.video.trovo
+# plugin.video.trovo - KODI 19 - MATRIX version
 
 Welcome to my Trovo addon for KODI. This add-on allows you to view streams and replay on the https://trovo.live streaming site.
 
